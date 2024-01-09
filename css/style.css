@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 10px;
+}
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: rgb(16, 98, 93);
+  transition: all 0.2s ease-in;
+}
+
+.colors-container {
+  display: flex;
+  gap: 1.5rem;
+  width: 50%;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.colors {
+  padding: 1rem;
+}
+
+.color-code {
+  color: white;
+  font-size: 3rem;
+}
+
+.button-random {
+  padding: 1.5rem;
+  font-size: 1.6rem;
+}
