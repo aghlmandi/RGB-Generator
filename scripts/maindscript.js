@@ -1,10 +1,11 @@
 const cmdRandom = document.querySelector(".button-random");
-
 const bodyData = document.querySelector("body");
 const lblColor = document.querySelector(".color-code");
+const lblHexColor = document.querySelector(".color-hex");
 const txtcolors = document.querySelectorAll(".colors");
+const hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
-let colorRed, colorGreen, colorBlue;
+let colorRed, colorGreen, colorBlue, hexCode;
 
 randomColorChange();
 
@@ -14,7 +15,8 @@ function randomColorChange() {
   colorRed = randomGenerator(255);
   colorGreen = randomGenerator(255);
   colorBlue = randomGenerator(255);
-  colorPlate = `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
+  colorPlate = `RGB(${colorRed}, ${colorGreen}, ${colorBlue})`;
+  hexCode = rgbToHex(colorRed, colorGreen, colorBlue);
   filler();
 }
 
@@ -39,7 +41,8 @@ function colorPickup() {
       colorBlue = item.value;
     }
   });
-  colorPlate = `rgb(${colorRed}, ${colorGreen}, ${colorBlue})`;
+  colorPlate = `RGB(${colorRed}, ${colorGreen}, ${colorBlue})`;
+  hexCode = rgbToHex(colorRed, colorGreen, colorBlue);
   filler();
 }
 
@@ -56,4 +59,12 @@ function filler() {
   });
   bodyData.style.backgroundColor = colorPlate;
   lblColor.innerText = colorPlate;
+  lblHexColor.innerText = hexCode;
+}
+
+function rgbToHex(r, g, b) {
+  let hex = `Hex: #${hexArray[Math.trunc(r / 16)]}${hexArray[r % 16]}${
+    hexArray[Math.trunc(g / 16)]
+  }${hexArray[g % 16]}${hexArray[Math.trunc(b / 16)]}${hexArray[b % 16]}`;
+  return hex;
 }
