@@ -34,6 +34,11 @@ body {
   font-size: 3rem;
 }
 
+.color-hex {
+  color: white;
+  font-size: 3rem;
+}
+
 .button-random {
   padding: 1.5rem;
   font-size: 1.6rem;
